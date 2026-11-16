@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;MODE=MySQL
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+app:
+  jwt:
+    secret: test-secret-key-that-is-at-least-32-characters-long
+    expiration-ms: 3600000
+  cors:
+    allowed-origin: http://localhost:5173

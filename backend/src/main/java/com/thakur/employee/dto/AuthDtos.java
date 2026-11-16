@@ -1,0 +1,1 @@
+package com.thakur.employee.dto; import jakarta.validation.constraints.*; public class AuthDtos { public record LoginRequest(@Email String email,@NotBlank String password){} public record AuthResponse(String token,Long id,String name,String email,String role,String department){} }

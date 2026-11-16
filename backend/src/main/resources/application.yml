@@ -1,0 +1,26 @@
+server:
+  port: ${PORT:8080}
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/employee_success?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+    username: ${DB_USERNAME:appuser}
+    password: ${DB_PASSWORD:apppassword}
+  jpa:
+    hibernate:
+      ddl-auto: ${DDL_AUTO:update}
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+app:
+  jwt:
+    secret: ${JWT_SECRET:change-this-development-secret-key-to-at-least-32-characters}
+    expiration-ms: ${JWT_EXPIRATION_MS:86400000}
+  cors:
+    allowed-origin: ${FRONTEND_URL:http://localhost:5173}
+logging:
+  level:
+    com.thakur.employee: INFO

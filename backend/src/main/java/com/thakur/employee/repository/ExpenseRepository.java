@@ -1,0 +1,1 @@
+package com.thakur.employee.repository; import com.thakur.employee.model.*;import org.springframework.data.jpa.repository.JpaRepository;import java.util.*; public interface ExpenseRepository extends JpaRepository<Expense,Long>{List<Expense> findByEmployeeEmailOrderByCreatedAtDesc(String email);List<Expense> findAllByOrderByCreatedAtDesc();}
